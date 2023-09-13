@@ -9,7 +9,6 @@ const timer = useTimerStore()
 </script>
 
 <template>
-  <div>{{ timer.positions }}</div>
   <ready v-if="timer.state === 'ready'"/>
   <active v-if="timer.state === 'active'"/>
   <finished v-if="timer.state === 'finished'"/>

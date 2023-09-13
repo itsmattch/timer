@@ -1,15 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap');
 
 html {
-  width: 100%;
+    height: 100%;
 }
 
 body {
-  font-family: 'Outfit', sans-serif;
-  min-width: 100%;
+    font-family: 'Outfit', sans-serif;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    font-size: 60px;
+    display: flex;
+    flex: 1;
 }
 
 html, body {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.scream {
+    font-size: 5em
+}
+
+.buttons {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 1em;
+    gap: 1em;
+}
+
+button {
+    justify-content: center;
+    text-transform: uppercase;
+    border-radius: 100em;
+    align-items: center;
+    padding: 0.75em;
+    font-size: 1.5em;
+    display: flex;
+    margin: 0 1em;
+    border: none;
+    gap: 0.25em;
+}
+
+button > svg {
+    height: 1em;
+    width: 1em;
+}
+
+input[type="range"] {
+    background: red;
+    cursor: pointer;
+    width: 100%;
 }
