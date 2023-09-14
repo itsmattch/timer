@@ -7,8 +7,10 @@ const timer = useTimerStore()
 </script>
 
 <template>
-  <Clock/>
-  <input type="range" min="300" max="3600" step="300" v-model="timer.seconds">
+  <div class="content">
+    <Clock/>
+    <input type="range" min="60" max="3600" step="60" v-model="timer.seconds">
+  </div>
   <div class="buttons">
     <button @click="timer.start"><Play/></button>
   </div>

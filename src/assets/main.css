@@ -1,26 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap');
 
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
 html {
     height: 100%;
 }
 
 body {
     font-family: 'Outfit', sans-serif;
-    justify-content: center;
-    align-items: center;
+    background: #3b0764;
     min-height: 100%;
-    font-size: 60px;
+    overflow: hidden;
+    font-size: 48px;
+    color: #f8fafc;
     display: flex;
     flex: 1;
 }
 
-html, body {
-    padding: 0;
-    margin: 0;
+#app {
+    flex-direction: column;
+    display: flex;
+    flex: 1;
+}
+
+.content {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    flex: 1;
 }
 
 .scream {
-    font-size: 5em
+    font-size: 20vw
 }
 
 .buttons {
@@ -29,15 +44,20 @@ html, body {
     display: flex;
     margin-top: 1em;
     gap: 1em;
+    padding: 1em;
 }
 
 button {
-    justify-content: center;
+    background: rgba(248, 250, 252, 0.1);
+    backdrop-filter: blur(5px);
     text-transform: uppercase;
+    justify-content: center;
     border-radius: 100em;
     align-items: center;
-    padding: 0.75em;
-    font-size: 1.5em;
+    position: relative;
+    overflow: hidden;
+    padding: 0.7em;
+    font-size: 1em;
     display: flex;
     margin: 0 1em;
     border: none;
@@ -45,12 +65,53 @@ button {
 }
 
 button > svg {
+    color: #e2e8f0;
     height: 1em;
     width: 1em;
 }
 
 input[type="range"] {
-    background: red;
-    cursor: pointer;
-    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-appearance: none;
+    width: calc(100% - 80px);
+    accent-color: #ffffff;
+    border-radius: 5px;
+    max-width: 600px;
+    height: 7px;
+}
+
+.deco {
+    transition: top 0.05s linear, left 0.05s linear;
+    border-radius: 100%;
+    filter: blur(500px);
+    background: #6d28d9;
+    position: absolute;
+    height: 1000px;
+    width: 1000px;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+body[data-state=active] {
+    background: #22c55e;
+}
+
+body[data-state=active] .deco {
+    background: #84cc16;
+}
+
+body[data-state=paused] {
+    background: #eab308;
+}
+
+body[data-state=paused] .deco {
+    background: #f97316;
+}
+
+body[data-state=finished] {
+    background: #dc2626;
+}
+
+body[data-state=finished] .deco {
+    background: #9333ea;
 }

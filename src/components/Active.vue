@@ -8,7 +8,9 @@ const timer = useTimerStore()
 </script>
 
 <template>
-  <Clock/>
+  <div class="content">
+    <Clock/>
+  </div>
   <div class="buttons">
     <button @click="timer.pause"><Pause/></button>
     <button @click="timer.restart"><Refresh/></button>
