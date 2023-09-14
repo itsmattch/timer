@@ -1,29 +1,20 @@
-# timer
+## Some timer app
 
-This template should help get you started developing with Vue 3 in Vite.
+This timer app is as straightforward as it gets - free of ads and other BS that
+usually clogs your screen.
 
-## Recommended IDE Setup
+### How to use it?
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Just go full screen on your laptop and let the huge red background do its job of
+catching your attention. Access it [here](https://timer.itsmattch.com/) - no
+strings attached.
 
-## Customize configuration
+### Want to suggest a feature?
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Think twice. This app thrives on its simplicity. But hey, if you have something
+mind-blowingly simple and cool, pop open a new issue or pull request. I'm all
+ears.
 
-## Project Setup
+### It's not responsive!!1
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Duh. Your phone's probably got a pre-installed timer app, use that.
