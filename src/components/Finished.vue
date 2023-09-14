@@ -6,7 +6,9 @@ const timer = useTimerStore()
 </script>
 
 <template>
-  <div class="scream">TIME OUT</div>
+  <div class="content">
+    <div class="scream">TIMEOUT</div>
+  </div>
   <div class="buttons">
     <button @click="timer.restart"><Refresh/></button>
   </div>

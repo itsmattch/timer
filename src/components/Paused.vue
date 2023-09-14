@@ -7,7 +7,9 @@ const timer = useTimerStore()
 </script>
 
 <template>
-  <div class="scream">PAUSED</div>
+  <div class="content">
+    <div class="scream">PAUSED</div>
+  </div>
   <div class="buttons">
     <button @click="timer.start">
       <Play/>

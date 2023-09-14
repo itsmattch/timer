@@ -6,15 +6,42 @@ const timer = useTimerStore()
 
 <template>
   <div class="clock">
-    <div class="digit">{{ timer.positions[0] }}</div>
-    <div class="digit">{{ timer.positions[1] }}</div>
-    <div class="colon">:</div>
-    <div class="digit">{{ timer.positions[2] }}</div>
-    <div class="digit">{{ timer.positions[3] }}</div>
+    <Transition mode="out-in" name="fade">
+      <div :key="timer.positions[0]" class="digit">{{ timer.positions[0] }}</div>
+    </Transition>
+    <Transition mode="out-in" name="fade">
+      <div :key="timer.positions[1]" class="digit">{{ timer.positions[1] }}</div>
+    </Transition>
+    <div class="colon">∶</div>
+    <Transition mode="out-in" name="fade">
+      <div :key="timer.positions[2]" class="digit">{{ timer.positions[2] }}</div>
+    </Transition>
+    <Transition mode="out-in" name="fade">
+      <div :key="timer.positions[3]" class="digit">{{ timer.positions[3] }}</div>
+    </Transition>
   </div>
 </template>
 
 <style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-leave-from, .fade-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .clock {
   justify-content: center;
   align-items: center;
@@ -24,10 +51,7 @@ const timer = useTimerStore()
 
 .digit {
   height: 2em;
-  width: 1em;
-}
-
-.colon {
+  width: 0.6em;
 }
 
 .digit, .colon {
