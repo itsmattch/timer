@@ -9,7 +9,7 @@ const timer = useTimerStore()
 
 <template>
   <div class="content">
-    <Clock/>
+    <Clock is-animated/>
   </div>
   <div class="buttons">
     <button @click="timer.pause"><Pause/></button>

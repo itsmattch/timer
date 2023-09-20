@@ -2,10 +2,12 @@
 import {useTimerStore} from "../stores/timer"
 
 const timer = useTimerStore()
+
+defineProps({isAnimated: Boolean});
 </script>
 
 <template>
-  <div class="clock">
+  <div :class="{ animated: isAnimated, clock: true }">
     <Transition mode="out-in" name="fade">
       <div :key="timer.positions[0]" class="digit">{{ timer.positions[0] }}</div>
     </Transition>
@@ -23,41 +25,42 @@ const timer = useTimerStore()
 </template>
 
 <style scoped>
-.fade-enter-active, .fade-leave-active {
+.animated .fade-enter-active, .animated .fade-leave-active {
   transition: opacity 0.25s, transform 0.25s;
 }
 
-.fade-enter-from {
-  opacity: 0;
+.animated .fade-enter-from {
   transform: translateY(-20px);
-}
-
-.fade-leave-to {
   opacity: 0;
-  transform: translateY(20px);
 }
 
-.fade-leave-from, .fade-enter-to {
-  opacity: 1;
+.animated .fade-leave-to {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.animated .fade-leave-from, .animated .fade-enter-to {
   transform: translateY(0);
+  opacity: 1;
 }
 
 .clock {
   justify-content: center;
   align-items: center;
+  user-select: none;
   display: flex;
   gap: 0.25em;
 }
 
 .digit {
-  height: 2em;
   width: 0.6em;
+  height: 2em;
 }
 
 .digit, .colon {
   justify-content: center;
   align-items: center;
-  font-size: 4em;
+  font-size: 3em;
   display: flex;
 }
 </style>
